@@ -236,27 +236,29 @@
 # 12. Ievadīti trīs skaitļi. Noteikt amplitūdu.
 #     https://ej.uz/2u3b
 
-# a = int(input("a: "))
-# b = int(input("b: "))
-# c = int(input("c: "))
+a = int(input("a: "))
+b = int(input("b: "))
+c = int(input("c: "))
 
-# if a >= b and a >= c:
-#     if b >= c:
-#       print(a - c)
-#     else:
-#        print(a - b)
-# elif b >= a and b >= c:
-#     if a >= c:
-#        print(b - c)
-#     else:
-#        print(b - a)
-# else:
-#     if a >= b:
-#        print(c - a)
-#     else:
-#        print(c - b)
+# 1. variants
+if a >= b and a >= c:
+    if b >= c:
+      print(a - c)
+    else:
+       print(a - b)
+elif b >= a and b >= c:
+    if a >= c:
+       print(b - c)
+    else:
+       print(b - a)
+else:
+    if a >= b:
+       print(c - a)
+    else:
+       print(c - b)
 
-# print(max(a, b, c) - min(a, b, c))
+# 2. variants
+print(max(a, b, c) - min(a, b, c))
 
 # 13. Noteikt, vai ievadītais skaitlis dalās ar 3, ar 5 vai ar abiem.
 #     https://ej.uz/1f9t
@@ -335,3 +337,34 @@
 
 # else:
 #     print(cipars1 + cipars2)
+
+# 18. Ievadīts skaitlis. Aprēķināt skaitļu ciparu summu.
+#     0 - 10 000 
+#     3 -> 3
+#     23 -> 5
+#     101 -> 2
+
+# sk = int(input("skaitlis: ")) # 243
+# sum = 0
+
+# pedejais = sk % 10 # 3
+# sum = sum + pedejais # 3
+# sk = sk // 10 # 24
+
+# pedejais = sk % 10 # 4
+# sum = sum + pedejais # 7
+# sk = sk // 10 # 2
+
+# pedejais = sk % 10 # 2
+# sum = sum + pedejais # 9
+# sk = sk // 10 # 0
+
+
+# 1. Izvade ar print
+# 2. Mainīgo ievade ar int(input(""))
+# 3. if - elif - else
+# 4. Matemātiski operatori (+ - / * // ** %)
+# 5. Salīdzināšanas operatori (> < >= <= == !=)
+
+skaitlis = int(input("skaitlis: "))
+
