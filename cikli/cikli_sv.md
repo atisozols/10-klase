@@ -11,8 +11,8 @@
 
 ## 2. variants
 
-[1. uzdevums](https://evaluauto.com/582209bd-4892-4a92-a0ee-40c3db6ed8ea)
-[2. uzdevums](https://evaluauto.com/32cdbdbd-62dd-42c1-aa97-9665199008a4)
-[3. uzdevums](https://evaluauto.com/dc37dad0-6b11-468b-9205-0419995c8302)
-[4. uzdevums](https://evaluauto.com/9c5cce3c-996d-49c7-88ad-deae34ea8129)
-[5. uzdevums](https://evaluauto.com/80846736-643f-4922-b78c-8b8a6817574b)
+- [1. uzdevums](https://evaluauto.com/582209bd-4892-4a92-a0ee-40c3db6ed8ea)
+- [2. uzdevums](https://evaluauto.com/32cdbdbd-62dd-42c1-aa97-9665199008a4)
+- [3. uzdevums](https://evaluauto.com/dc37dad0-6b11-468b-9205-0419995c8302)
+- [4. uzdevums](https://evaluauto.com/9c5cce3c-996d-49c7-88ad-deae34ea8129)
+- [5. uzdevums](https://evaluauto.com/80846736-643f-4922-b78c-8b8a6817574b)
