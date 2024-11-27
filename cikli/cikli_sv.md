@@ -9,6 +9,8 @@
 - [4. uzdevums](https://evaluauto.com/814579ca-e246-473f-9a97-92787552b1ad)
 - [5. uzdevums](https://evaluauto.com/80846736-643f-4922-b78c-8b8a6817574b)
 
+Danils, Martins A., Kristers, Martins, Ralfs, Vanesa, Artis, Raiens, Jasmīne
+
 ## 2. variants
 
 - [1. uzdevums](https://evaluauto.com/582209bd-4892-4a92-a0ee-40c3db6ed8ea)
