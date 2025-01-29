@@ -184,16 +184,17 @@
 
 ## Piemērs
 
-# char = "Atis"
+char = "Atis"
 # pārvērš tekstu
-# print(char.capitalize())
-# print(char.upper())
-# print(char.lower())
+print(char.capitalize())
+print(char.upper())
+print(char.lower())
 
 # pārbauda tekstu
-# print(char.islower())
-# print(char.isupper())
-# print(char.istitle())
+print(char.islower())
+print(char.isupper())
+print(char.istitle())
+print(char.isalpha())
 
 # 71. Dots teksts. Katru vārdu sākt ar lielo burtu.
 
@@ -210,3 +211,28 @@
 #     if word.istitle():
 #         sum += 1
 # print(sum)
+
+# 73. Ievadīts teksts. Tekstā atrast tos vārdus, kas beidzas ar burtu "t".
+
+text = "darīt vai nedarīt - tāds ir jautājums" # darīt; nedarīt
+
+# 74. Ievadīts teksts. Noteikt, vai tekstā sastopami visi patskaņi.
+
+text = ""
+patskani = "aeiou"
+
+word = "atis"
+
+for p in patskani:
+    if p in word:
+        print(1)
+
+# 75. Ievadīts teksts/simbolu virkne. Atdalīt neburtu 
+#     simbolus no burtiem un izvadīt tos atsevišķi.
+#     "abc123de45f6" -> "abcdef" un "123456"
+
+# 76. Dota simbolu virkne. Atrast tajā pirmo no 
+#     simboliem, kas parādās vienu reizi jeb neatkārtojās.
+#     "swijsuws" -> "i"
+
+# IESIEGŠANA - https://github.com/atisozols/10-klase/blob/main/simbolu_virknes/simbVirknes_fv.md
