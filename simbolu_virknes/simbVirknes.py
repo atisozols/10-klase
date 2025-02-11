@@ -106,7 +106,7 @@
             
 # print(maxVieniniekuSkaits)
 
-# 68. Ievadīts teksts. Noteikt, vai tas ir pareizi uzrakstīts e-pasts.
+# 68. Ievadīts teksts. Noteikt, vai tas ir pareizi uzrakstīts e-pasts. ___@___.__
 
 # email = "atis@mail.com"
 
@@ -184,17 +184,17 @@
 
 ## Piemērs
 
-char = "Atis"
-# pārvērš tekstu
-print(char.capitalize())
-print(char.upper())
-print(char.lower())
+# char = "Atis"
+# # pārvērš tekstu
+# print(char.capitalize())
+# print(char.upper())
+# print(char.lower())
 
-# pārbauda tekstu
-print(char.islower())
-print(char.isupper())
-print(char.istitle())
-print(char.isalpha())
+# # pārbauda tekstu
+# print(char.islower())
+# print(char.isupper())
+# print(char.istitle())
+# print(char.isalpha())
 
 # 71. Dots teksts. Katru vārdu sākt ar lielo burtu.
 
@@ -214,18 +214,18 @@ print(char.isalpha())
 
 # 73. Ievadīts teksts. Tekstā atrast tos vārdus, kas beidzas ar burtu "t".
 
-text = "darīt vai nedarīt - tāds ir jautājums" # darīt; nedarīt
+# text = "darīt vai nedarīt - tāds ir jautājums" # darīt; nedarīt
 
 # 74. Ievadīts teksts. Noteikt, vai tekstā sastopami visi patskaņi.
 
-text = ""
-patskani = "aeiou"
+# text = ""
+# patskani = "aeiou"
 
-word = "atis"
+# word = "atis"
 
-for p in patskani:
-    if p in word:
-        print(1)
+# for p in patskani:
+#     if p in word:
+#         print(1)
 
 # 75. Ievadīts teksts/simbolu virkne. Atdalīt neburtu 
 #     simbolus no burtiem un izvadīt tos atsevišķi.
@@ -236,3 +236,95 @@ for p in patskani:
 #     "swijsuws" -> "i"
 
 # IESIEGŠANA - https://github.com/atisozols/10-klase/blob/main/simbolu_virknes/simbVirknes_fv.md
+
+# 78. Dots teksts/simbolu virkne un skaitlis n. Norotēt simbolu virkni pa n simboliem.
+#     peteris, 2 -> terispe
+#     peteris -> eterisp -> terispe -> erispet -> ..
+
+# text = "peteris"
+# n = 2
+
+# print(text[n:] + text[:n])
+
+# 79. Divas simbolu virknes. Noteikt, vai rotējot vienu ir iegūstama otra.
+#     terispe, peteris -> jā
+#     atis, sita -> nē
+
+# w1 = "tukums"
+# w2 = "kumstu"
+# found = False
+
+# for n in range(len(w1)):
+#     if w2 == w1[n:] + w1[:n]:
+#         found = True
+#         break
+
+# print("jā" if found else "nē")
+
+# if found:
+#     print("jā")
+# else:
+#     print("nē")
+
+# 80. Ievadīts teksts/simb. virkne. Programma nosaka, vai no tekstā 
+#     esošajiem simboliem iespējams izveidot palindromu.
+#     nana -> ir
+#     nanan -> ir -> annna
+#     abcdd -> nav
+
+# potential_palindrome = "aaaaaaa"  # aannnaa
+
+# not_repeating_chars = ""
+
+# even = 0
+# uneven = 0
+
+# for char in potential_palindrome: 
+#     if not char in not_repeating_chars:
+#         not_repeating_chars += char
+
+# for char in not_repeating_chars:
+#     if potential_palindrome.count(char) % 2 == 0:
+#         even += 1
+#     else:
+#         uneven -= 1
+
+# if uneven <= 1:
+#     print("jā")
+# else:
+#     print("nē")
+
+# 81. Dota izteiksme ar iekavām. Izvadīt to tekstu, kas atrodas visdziļāk iekavās.
+# "abc(de(fg)hij)kl(mn)op" -> fg
+
+text = "abc(de(fg)hij)kl(mn)op"
+stavoklis = 0
+max_stavoklis = 0
+valid = False
+t = ""
+
+for char in text:
+    if char == "(":
+        stavoklis += 1
+    elif char == ")":
+        stavoklis -= 1
+    elif stavoklis > max_stavoklis:
+        t = ""
+        max_stavoklis = stavoklis
+        t += char
+    elif stavoklis == max_stavoklis:
+        t += char
+
+    if stavoklis < 0:
+        valid = False
+        break
+
+print(t)
+
+if stavoklis == 0:
+    valid = True
+
+if valid:
+    print("ir pareizs")
+else:
+    print("nav pareizs")
