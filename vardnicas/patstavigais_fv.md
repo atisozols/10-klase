@@ -92,7 +92,7 @@ print(students.get("Zane", "Nav atrasts"))
 ### 2. Uzdevums: Elementu pievienošana un dzēšana
 **Uzdevums:** Pievieno pie iepriekš izveidotās vārdnīcas jaunu pāri (piemēram, "Basketbols": 5). Pēc tam dzēs pāri, kura atslēga ir kāds no iepriekšējiem elementiem. Izdrukājiet gala vārdnīcu.
 ### 3. Uzdevums: Vārdnīcas cikliska apstrāde
-**Uzdevums:** Izveido programmu, kas cauriterē pāri iepriekš izveidotajā vārdnīcā un izdrukā katru atslēgu un tās vērtību formātā:  
+**Uzdevums:** Izveido programmu, kas cikliski apstrādā vārdnīcu un izdrukā katru atslēgu un tās vērtību formātā:  
 `"Sporta veids: <atslēga>, Spēlētāju skaits: <vērtība>"`.
 ### 4. Uzdevums: Vērtību modifikācija
 **Uzdevums:** Modificē vārdnīcā esošu sporta veidu vērtību, palielinot katra sporta veida spēlētāju skaitu par 1. Izdrukājiet atjaunināto vārdnīcu.
