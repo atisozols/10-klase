@@ -8,7 +8,7 @@ Python vārdnīcas (dictionaries) ļauj saglabāt datus kā **atslēgu-vērtību
 
 - **Vārdnīca** ir kolekcija, kurā dati tiek glabāti kā atslēgu un vērtību pāri.
 - Katram pārim ir **atslēga** (key) un **vērtība** (value). Atslēgas parasti ir unikālas.
-- Vārdnīcas tiek definētas, izmantojot liekuliekavas `{}`.
+- Vārdnīcas tiek definētas, izmantojot figūriekavas `{}`.
 
 ---
 
