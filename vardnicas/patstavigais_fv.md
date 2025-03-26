@@ -95,6 +95,6 @@ print(students.get("Zane", "Nav atrasts"))
 **Uzdevums:** Izveido programmu, kas cauriterē pāri iepriekš izveidotajā vārdnīcā un izdrukā katru atslēgu un tās vērtību formātā:  
 `"Sporta veids: <atslēga>, Spēlētāju skaits: <vērtība>"`.
 ### 4. Uzdevums: Vērtību modifikācija
-**Uzdevums:** Modificē vārdnīcā esošu sporta veidu vērtību, palielinot spēlētāju skaitu par 1. Izdrukājiet atjaunināto vārdnīcu.
+**Uzdevums:** Modificē vārdnīcā esošu sporta veidu vērtību, palielinot katra sporta veida spēlētāju skaitu par 1. Izdrukājiet atjaunināto vārdnīcu.
 ### 5. Uzdevums: Funkcija, kas filtrē vārdnīcu
 **Uzdevums:** Izveido funkciju `filtrēt_sportus(vardnica)`, kas saņem kā argumentu vārdnīcu un atgriež jaunu vārdnīcu, kurā iekļauti tikai tie sporta veidi, kuru spēlētāju skaits ir lielāks par 5. Pārbaudiet funkciju ar savu vārdnīcu un izdrukājiet rezultātu.
