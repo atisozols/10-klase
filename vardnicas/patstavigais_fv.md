@@ -1,6 +1,6 @@
 # Python vārdnīcas ceļvedis
 
-Python vārdnīcas (dictionaries) ļauj saglabāt datus kā **atslēgu-vērtību** pārus. Ja jums jau ir pieredze ar masīviem (lists), cilpu struktūrām un virkņu (strings) apstrādi, šis ceļvedis palīdzēs jums ātri sākt darbu ar vārdnīcām!
+Python vārdnīcas (dictionaries) ļauj saglabāt datus kā **atslēgu-vērtību** pārus. Ja jums jau ir pieredze ar masīviem/sarakstiem (lists), cikliem un virkņu (strings) apstrādi, šis ceļvedis palīdzēs jums ātri sākt darbu ar vārdnīcām!
 
 ---
 
