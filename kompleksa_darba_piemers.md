@@ -3,7 +3,6 @@
 **Maksimālais punktu skaits:** 100 punkti
 **Laiks:** 80 minūtes
 
-**Uzdevumu sadalījums:**
 - **20 punkti – Python pamatzināšanas (mainīgie, sazarojumi)**
 - **20 punkti – Cikli**  
 - **15 punkti – Saraksti**
