@@ -1,5 +1,6 @@
 class Taisnsturis:
     def __init__(self, x, y):
+        print(f"Izveidots taisnstūris ar malām {x} un {y}")
         self.a = x
         self.b = y
 
@@ -67,7 +68,7 @@ class Point2D:
         self.totalTravelled = 0
 
     def __str__(self):
-        return f"Point at ({self.koord_x}; {self.koord_y}). Total distance: {self.totalTravelled}"
+        return f"Point at ({self.koord_x}; {self.koord_y})"
 
     def moveX(self, d):
         self.koord_x += d
@@ -82,12 +83,68 @@ class Point2D:
         deltaY = abs(self.koord_y - point.koord_y)
         return (deltaX ** 2 + deltaY ** 2) ** 0.5
             
-p = Point2D(5, 8)
-o = Point2D(0, 1)
-v = Point2D(9, 3)
-print(o.distanceTo(v))
-print(Point2D.distanceTo(o, v))
+# p = Point2D(5, 8)
+# o = Point2D(0, 1)
+# v = Point2D(9, 3)
+# print(o.distanceTo(v))
+# print(Point2D.distanceTo(o, v))
 
 # Implementējot Point2D klasi, realizēt programmu, kas ļauj ievadīt četras koordinātas. 
 # Programma izveido četrus Point2D objektus un izmantojot 
 # funkciju distanceTo() aprēķina ievadītās figūras perimetru un laukumu.
+
+# For cikls, inputs, saraksti un pati Point2D klase
+
+# For cikls garumā 4. Ievada koordinātas, 
+# izmantojot koordinātas izveido Point2D objektus un saglabā sarakstā
+count = 4
+points = []
+perimeter = 0
+
+# for i in range(count):
+#     x = int(input(f"ievadi {i + 1}. punkta x koordināti -> "))
+#     y = int(input(f"ievadi {i + 1}. punkta y koordināti -> "))
+#     points.append(Point2D(x, y))
+
+# for i in range(count):
+#     perimeter += points[i].distanceTo(points[(i + 1) % 4])
+
+# print(perimeter)
+
+# Klase Kvadratvienadojums, kas inicializācijas funkcijā saņem visus trīs koeficientus a, b un c.
+# Klases iekšējās funkcijas realizē diskriminanta aprēķinu, sakņu aprēķinu, 
+# parabolas virsotņu koordinātas un zaru virzienu (uz augšu/uz leju). 
+
+# x2 - 4x + 5 = 0
+# a = 1, b = -4, c = 5
+
+class Kvadratvienadojums:
+    def __init__(self, x, y, z):
+        self.a = x
+        self.b = y
+        self.c = z
+
+    def __str__(self):
+        return f"{self.a}x2 + {self.b}x + {self.c}" # <__main__.Kvadratvienadojums object at 0x0000027B5D66B770>
+
+    def diskriminants(self):
+        return self.b ** 2 - 4 * self.a * self.c
+    
+    def saknes(self):
+        d = self.diskriminants()
+        if d < 0:
+            return []
+        elif d == 0:
+            return [-self.b/(2 * self.a)]
+        else:
+            x1 = (-self.b + d ** 0.5)/(2 * self.a)
+            x2 = (-self.b - d ** 0.5)/(2 * self.a)
+            return [x1, x2]
+
+u = Kvadratvienadojums(1, -4, 2)
+
+print(u.saknes())
+
+
+# Klase Circle, kur ir divi iekšējie mainīgie - rādiuss un punkts, kas ir ar tipu Point2D
+# Izveidot metodi/iekšējo funkciju isOverlapping(), kas nosaka, vai divi rinķi pārklājas
