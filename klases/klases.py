@@ -140,11 +140,33 @@ class Kvadratvienadojums:
             x1 = (-self.b + d ** 0.5)/(2 * self.a)
             x2 = (-self.b - d ** 0.5)/(2 * self.a)
             return [x1, x2]
+        
+    def zariUzAugsu(self):
+        return self.a > 0
+    
+    def virsotnesKoordinatas(self):
+        x = -self.b / (2 * self.a)
+        y = self.a * x ** 2 + self.b * x + self.c
+        return [x, y]
 
 u = Kvadratvienadojums(1, -4, 2)
-
+print(u.virsotnesKoordinatas())
 print(u.saknes())
-
 
 # Klase Circle, kur ir divi iekšējie mainīgie - rādiuss un punkts, kas ir ar tipu Point2D
 # Izveidot metodi/iekšējo funkciju isOverlapping(), kas nosaka, vai divi rinķi pārklājas
+
+class Circle:
+    def __init__(self, center: Point2D, radius: float):
+        self.center = center
+        self.radius = radius
+
+    def isOverlapping(self, other):
+        # ņemam attālumu starp centriem un salīdzinām ar abu rādiusu summu
+        radiusSum = self.radius + other.radius
+        distance = self.center.distanceTo(other.center)
+        return radiusSum > distance
+        
+c1 = Circle(Point2D(1, 2), 4)
+c2 = Circle(Point2D(1, 9), 2)
+print(c1.isOverlapping(c2))
