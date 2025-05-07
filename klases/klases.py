@@ -149,9 +149,9 @@ class Kvadratvienadojums:
         y = self.a * x ** 2 + self.b * x + self.c
         return [x, y]
 
-u = Kvadratvienadojums(1, -4, 2)
-print(u.virsotnesKoordinatas())
-print(u.saknes())
+# u = Kvadratvienadojums(1, -4, 2)
+# print(u.virsotnesKoordinatas())
+# print(u.saknes())
 
 # Klase Circle, kur ir divi iekšējie mainīgie - rādiuss un punkts, kas ir ar tipu Point2D
 # Izveidot metodi/iekšējo funkciju isOverlapping(), kas nosaka, vai divi rinķi pārklājas
@@ -169,4 +169,32 @@ class Circle:
         
 c1 = Circle(Point2D(1, 2), 4)
 c2 = Circle(Point2D(1, 9), 2)
-print(c1.isOverlapping(c2))
+# print(c1.isOverlapping(c2))
+
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+s = Student("Atis", 25)
+
+class Node:
+    def __init__(self, data, next = None):
+        self.data = data
+        self.next = next
+
+    def __str__(self):
+        return f"Node({self.data})"
+
+a = Node("A")
+b = Node("B")
+c = Node("C")
+
+a.next = b
+b.next = c
+
+cur = a
+while cur:
+    print(cur)
+    cur = cur.next
+
