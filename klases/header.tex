@@ -1,0 +1,8 @@
+\usepackage[many]{tcolorbox}
+\usepackage{etoolbox}
+% Override Pandoc's horizontal rule
+\providecommand{\tightlist}{} % in case it's undefined
+\renewcommand{\hrulefill}{\leavevmode\leaders\hrule height 0.5pt\hfill\kern0pt}
+\newcommand{\customhr}{\par\vspace{1.5em}\noindent\rule{\linewidth}{0.5pt}\par\vspace{1.5em}}
+\AtBeginEnvironment{verbatim}{\begin{tcolorbox}[colback=gray!5!white, colframe=black!80!white, boxrule=0.5pt]}
+\AfterEndEnvironment{verbatim}{\end{tcolorbox}}

@@ -31,7 +31,6 @@ class TaisnlenkaTrijsturis:
 # print(trijsturis1.hipotenuza())
 # print(TaisnlenkaTrijsturis.hipotenuza(trijsturis1))
 
-
 class BankAccount:
     def __init__(self, n, b):
         self.name = n

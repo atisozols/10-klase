@@ -1,10 +1,10 @@
 # **Pārbaudes darbs: Simbolu virkņu apstrāde Python valodā**
 
-**Darba ilgums:** 80 min  
+**Darba ilgums:** 60 min  
 **Maksimālais punktu skaits:** 100  
 
 ## **Norādījumi:**  
-- Darbam atvēlētais laiks ir 80 minūtes.  
+- Darbam atvēlētais laiks ir 60 minūtes.  
 - Darbs sastāv no uzdevumiem, kuros jāanalizē kods, jāaizpilda tukšās vietas, jālabo kļūdas un jāraksta savs kods.  
 
 ---

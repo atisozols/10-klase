@@ -1,0 +1,69 @@
+\documentclass[8pt]{extarticle}
+\usepackage{geometry}
+\geometry{margin=0.7in}  % Similar GitHub-like spacing
+
+\usepackage{xcolor}  % Enable color for links
+\usepackage{hyperref}  
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\usepackage{titlesec}  % ✅ Load titlesec package (Required for \titleformat)
+
+\titleformat{\section}{\Large\bfseries}  
+\titleformat{\subsection}{\large\bfseries}
+\titleformat{\subsubsection}[display]{\bfseries}{}{0pt}{}  % ✅ Remove numbering from H3
+
+\usepackage{fontspec}
+\setmainfont{Helvetica}  % Alternative GitHub-like font
+
+\newcommand{\fullhr}{\noindent\rule{\textwidth}{0.4pt}}
+
+\usepackage{titlesec}  
+\titleformat{\section}{\Large\bfseries}  % Make headings bold like GitHub
+\titleformat{\subsection}{\large\bfseries}
+
+\renewcommand{\baselinestretch}{1.2}  % Line spacing similar to GitHub
+
+\usepackage{fancyvrb}  % Style code blocks
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+
+% ✅ ADD MISSING SHADING SUPPORT
+\usepackage{framed}  % Provides framed environments for code blocks
+\definecolor{shadecolor}{rgb}{0.95,0.95,0.95}  % Light gray background for code
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+
+% Add before \begin{document}
+\usepackage{fancyvrb}
+\usepackage{color}
+
+% Define syntax highlighting commands used by Pandoc
+
+
+% Add before \begin{document}
+\usepackage{fancyvrb}
+\usepackage{color}
+
+% Add before \begin{document}
+\usepackage{fancyvrb}
+\usepackage{color}
+
+% Define Pandoc syntax highlighting commands
+\newcommand{\BuiltInTok}[1]{\textcolor{blue}{#1}}  % Built-in functions
+\newcommand{\VariableTok}[1]{\textcolor{purple}{#1}}  % Variables in purple
+\newcommand{\OperatorTok}[1]{\textcolor{blue}{#1}}  % Operators in blue
+\newcommand{\DecValTok}[1]{\textcolor{cyan}{#1}}  % Numbers in cyan
+\newcommand{\NormalTok}[1]{#1}  % Normal text
+\newcommand{\ControlFlowTok}[1]{\textbf{#1}}    % Control flow keywords in bold
+\newcommand{\KeywordTok}[1]{\textcolor{blue}{#1}}  % Keywords in blue
+\newcommand{\StringTok}[1]{\textcolor{red}{#1}}  % Strings in red
+\newcommand{\CommentTok}[1]{\textcolor{gray}{#1}}  % Comments in gray
+\newcommand{\FunctionTok}[1]{\textcolor{purple}{#1}}  % Functions in purple
+
+\begin{document}
+
+$body$  % Pandoc will replace this with the Markdown content
+
+\end{document}

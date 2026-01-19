@@ -1,0 +1,4 @@
+\usepackage[many]{tcolorbox}
+\usepackage{etoolbox}
+\AtBeginEnvironment{verbatim}{\begin{tcolorbox}[colback=gray!5!white, colframe=black!80!white, boxrule=0.5pt]}
+\AfterEndEnvironment{verbatim}{\end{tcolorbox}}
