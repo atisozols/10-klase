@@ -1,4 +1,4 @@
-# Python Strings – 10 uzdevumi (W3Schools pamati)
+# Python Strings – 15 uzdevumi (W3Schools pamati)
 
 ## 1. Indeksēšana
 
@@ -125,3 +125,63 @@ Uzdevums:
 - Izdrukā “čeku” vienā rindā, piemēram:
   - "3 x Apple at 0.50 EUR = 1.50 EUR"
 - Nodrošini, ka naudas vērtības tiek rādītas ar 2 zīmēm aiz komata.
+
+## 11. Apakšvirknes meklēšana (find() / rfind())
+
+Uzraksti programmu:
+
+```python
+text = input("Enter text: ")
+keyword = input("Enter keyword: ")
+```
+
+Uzdevumi:
+
+- Atrodi un izdrukā keyword pirmo parādīšanās indeksu (izmanto .find()).
+- Atrodi un izdrukā keyword pēdējo parādīšanās indeksu (izmanto .rfind()).
+- Ja keyword parādās vismaz 2 reizes, izdrukā teksta daļu, kas atrodas starp pirmo un pēdējo keyword parādīšanos (neiekļaujot pašu keyword).
+
+## 12. Paroles pārbaude (vairāki nosacījumi)
+
+Prasi lietotājam ievadīt paroli.
+
+Izdrukā "Strong" tikai tad, ja izpildās visi nosacījumi:
+
+- Paroles garums ir vismaz 8.
+- Parolē ir vismaz viens cipars.
+- Parolē ir vismaz viens lielais burts.
+- Parolē nav atstarpju.
+
+Ja kaut kas neizpildās, izdrukā "Weak" un pēc tam izdrukā katru neizpildīto nosacījumu atsevišķā rindā.
+
+## 13. Akronīms no teikuma (split() + indeksēšana)
+
+Prasi lietotājam ievadīt frāzi (var būt liekas atstarpes, piemēram: " Central Processing Unit ").
+
+Uzdevumi:
+
+- Attīri ievadi (strip).
+- Sadalī frāzi vārdos.
+- Izveido akronīmu no katra vārda pirmā burta.
+- Izdrukā akronīmu ar lielajiem burtiem.
+
+## 14. Raksta atpazīšana: atkārtots fragments
+
+Prasi lietotājam ievadīt virkni s.
+
+Uzdevums:
+
+- Nosaki, vai s var iegūt, atkārtojot kādu īsāku, netukšu fragmentu vairāk nekā 1 reizi (piemēram, "abcabcabc" vai "aaaa").
+- Ja var, izdrukā "YES" un īsāko fragmentu, kuru atkārtojot iegūst s.
+- Ja nevar, izdrukā "NO".
+
+## 15. Palindroms (normalizēšana + pārbaude)
+
+Prasi lietotājam ievadīt tekstu.
+
+Uzdevumi:
+
+- Pārvērt tekstu uz mazajiem burtiem.
+- Izmet ārā visas rakstzīmes, kas nav burti vai cipari.
+- Pārbaudi, vai rezultāts ir palindroms (lasa vienādi no abām pusēm).
+- Izdrukā "Palindrome" vai "Not palindrome".
