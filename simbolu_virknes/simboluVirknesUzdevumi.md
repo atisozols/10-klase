@@ -1,4 +1,4 @@
-# Python Strings – 15 uzdevumi (W3Schools pamati)
+# Python Strings – 16 uzdevumi (W3Schools pamati)
 
 ## 1. Indeksēšana
 
@@ -185,3 +185,17 @@ Uzdevumi:
 - Izmet ārā visas rakstzīmes, kas nav burti vai cipari.
 - Pārbaudi, vai rezultāts ir palindroms (lasa vienādi no abām pusēm).
 - Izdrukā "Palindrome" vai "Not palindrome".
+
+## 16. Garākā distance starp nullēm (0/1 virkne)
+
+Dots:
+
+```python
+sv = input("Enter 0/1 string: ")
+```
+
+Uzdevums:
+
+- Dota simbolu virkne, kas sastāv tikai no "0" un "1".
+- Atrodi garāko distanci starp divām nullēm (t.i., lielāko "1" simbolu skaitu starp divām "0").
+- Ja virknē nav vismaz 2 nulles, izdrukā 0.
