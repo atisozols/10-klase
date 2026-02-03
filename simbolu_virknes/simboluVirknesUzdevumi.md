@@ -1,4 +1,4 @@
-# Python Strings – 16 uzdevumi (W3Schools pamati)
+# Python Strings – 24 uzdevumi (W3Schools pamati)
 
 ## 1. Indeksēšana
 
@@ -199,3 +199,117 @@ Uzdevums:
 - Dota simbolu virkne, kas sastāv tikai no "0" un "1".
 - Atrodi garāko distanci starp divām nullēm (t.i., lielāko "1" simbolu skaitu starp divām "0").
 - Ja virknē nav vismaz 2 nulles, izdrukā 0.
+
+## 17. E-pasta pārbaude (precīzāka validācija)
+
+Uzraksti programmu:
+
+```python
+email = input("Enter email: ")
+```
+
+Uzdevumi:
+
+- Pārbaudi, ka e-pastā ir tieši viena "@".
+- Pārbaudi, ka pēc "@" ir vismaz viena ".".
+- Pārbaudi, ka e-pasts nesākas un nebeidzas ar "@" vai ".".
+- Pārbaudi, ka e-pastā nav atstarpju.
+- Izdrukā "Valid" vai "Invalid".
+
+## 18. Iekavas: pareizības pārbaude
+
+Dots:
+
+```python
+text = input("Enter text with parentheses: ")
+```
+
+Uzdevumi:
+
+- Tekstā var būt dažādi simboli, bet iekavas ir tikai "(" un ")".
+- Pārbaudi, vai iekavas lietotas pareizi (nevar sākties ar ")", nevar "aizvērt" vairāk nekā atvērt, beigās jābūt 0).
+- Izdrukā "Valid" vai "Invalid".
+
+## 19. Teksts ārpus iekavām
+
+Dots:
+
+```python
+text = input("Enter text with parentheses: ")
+```
+
+Uzdevums:
+
+- Izveido jaunu tekstu, kurā paliek tikai tie simboli, kas nav iekļauti iekavās (ņem vērā arī ligzdotas iekavas).
+- Izdrukā rezultātu.
+
+## 20. Visdziļāk iekavās esošais teksts
+
+Dots:
+
+```python
+text = input("Enter text with parentheses: ")
+```
+
+Uzdevumi:
+
+- Pieņem, ka iekavas ir pareizas.
+- Atrodi un izdrukā to teksta daļu, kas atrodas visdziļāk iekavās.
+- Ja ir vairākas visdziļākās daļas vienādā dziļumā, izdrukā pirmo.
+
+## 21. Pirmais neatkārtojošais simbols
+
+Dots:
+
+```python
+s = input("Enter text: ")
+```
+
+Uzdevumi:
+
+- Atrodi pirmo simbolu, kas parādās tieši 1 reizi visā virknē.
+- Ja tāda nav, izdrukā "None".
+
+## 22. Burti un cipari atsevišķi
+
+Dots:
+
+```python
+s = input("Enter text: ")
+```
+
+Uzdevumi:
+
+- Izveido 2 jaunas virknes:
+  - vienu tikai no burtiem (A–Z, a–z),
+  - otru tikai no cipariem (0–9).
+- Izdrukā abas virknes katru savā rindā.
+
+## 23. Virknes rotācija pa n simboliem
+
+Dots:
+
+```python
+s = input("Enter text: ")
+n = int(input("Enter n: "))
+```
+
+Uzdevumi:
+
+- Norotē virkni pa kreisi par n simboliem.
+- Ja n ir lielāks par virknes garumu, izmanto n % len(s).
+- Izdrukā rezultātu.
+
+## 24. Vai viena virkne ir otras rotācija?
+
+Dots:
+
+```python
+w1 = input("Enter first word: ")
+w2 = input("Enter second word: ")
+```
+
+Uzdevumi:
+
+- Pārbaudi, vai, rotējot w1, var iegūt w2.
+- Ja var, izdrukā "YES", citādi "NO".
