@@ -97,3 +97,41 @@
 # Pirmais L, kas strādā, ir īsākais fragments. Tad drukā:
 # YES un f
 # Ja neviens neder, drukā NO.
+
+
+
+s = "ababab"
+# reizinajums = ""
+# print(s)
+
+# for i in range(1, len(s) // 2 + 1):
+#     if len(s) % i == 0:
+#         reizinajums = s[:i] * (len(s) // len(s[:i]))
+#         if s == reizinajums:
+#             print("YES", s[:i])
+#             break
+#         else:
+#             reizinajums = ""
+
+# if len(reizinajums) == 0:
+#     print("NO")
+
+
+s = "abcba"
+
+i = 0
+j = len(s) - 1
+valid = True
+    
+while i <= j:
+    if s[i] != s[j]:
+        valid = False
+        break
+    i += 1
+    j -= 1
+
+if valid:
+    print("Ir palindroms")
+else:
+    print("Nav palindroms")
+
