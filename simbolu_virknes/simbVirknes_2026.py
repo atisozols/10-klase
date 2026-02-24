@@ -100,6 +100,9 @@
 
 
 
+from itertools import count
+
+
 s = "ababab"
 # reizinajums = ""
 # print(s)
@@ -117,21 +120,58 @@ s = "ababab"
 #     print("NO")
 
 
-s = "abcba"
+# s = "abcba"
 
-i = 0
-j = len(s) - 1
-valid = True
+# i = 0
+# j = len(s) - 1
+# valid = True
     
-while i <= j:
-    if s[i] != s[j]:
-        valid = False
-        break
-    i += 1
-    j -= 1
+# while i <= j:
+#     if s[i] != s[j]:
+#         valid = False
+#         break
+#     i += 1
+#     j -= 1
 
-if valid:
-    print("Ir palindroms")
-else:
-    print("Nav palindroms")
+# if valid:
+#     print("Ir palindroms")
+# else:
+#     print("Nav palindroms")
 
+
+# 16. 
+
+# s = "11101100111111011111111011"
+# max_vieninieku_skaits = 0
+# vieninieku_skaits = 0
+# bija_nulle = False
+# for char in s:
+#     if char == "0":
+#         bija_nulle = True
+
+#     if char == "1" and bija_nulle:
+#         vieninieku_skaits += 1
+#     elif char == "0" and vieninieku_skaits > 0:
+#         if vieninieku_skaits > max_vieninieku_skaits:
+#             max_vieninieku_skaits = vieninieku_skaits
+#         vieninieku_skaits = 0
+
+# print(max_vieninieku_skaits)
+
+# 2. no FV
+
+s = "aaabbcaaa" # -> a3b2c1a3
+result = ""
+current = ""
+current_count = 0
+for char in s:
+    if char == current:
+        current_count += 1
+    else:
+        if current_count > 0:
+            result += current + str(current_count)
+        current = char
+        current_count = 1
+
+result += current + str(current_count)
+print(result)
