@@ -31,7 +31,7 @@ pilsetas = {
 
 # Drošāka piekļuve ar get()
 # print(pilsetas.get("Ventspils"))      # None
-# print(pilsetas.get("Ventspils", 0))   # 0
+# print(pilsetas.get("Tukums", 0))   # 0
 
 
 # ============================================================
@@ -39,16 +39,21 @@ pilsetas = {
 # ============================================================
 
 # Pievienot jaunu pāri
-pilsetas["Valmiera"] = 23000
+# pilsetas["Valmiera"] = 23000
+# pilsetas["Valmiera"] = 25000
 
-# Mainīt esošu vērtību
-pilsetas["Riga"] = 606000
+# print(pilsetas.get("Valmiera"))
+
+# # Mainīt esošu vērtību
+# pilsetas["Riga"] = 606000
 
 # Dzēst pēc atslēgas
 # del pilsetas["Cesis"]
 
 # Izņemt un saņemt vērtību
 # skaits = pilsetas.pop("Liepaja")  # 67000
+# print(skaits)
+# print(pilsetas)
 
 # Pārbaude, vai atslēga eksistē
 # print("Riga" in pilsetas)     # True
@@ -70,6 +75,10 @@ pilsetas["Riga"] = 606000
 # Atslēga + vērtība
 # for key, value in pilsetas.items():
 #     print(key, value)
+
+# Atslēga + vērtība alternatīva
+# for key in pilsetas:
+#     print(key, pilsetas[key])
 
 
 # ============================================================
@@ -100,6 +109,7 @@ pilsetas["Riga"] = 606000
 # skaits = {}
 # for ch in teksts:
 #     skaits[ch] = skaits.get(ch, 0) + 1
+#     print(ch, skaits)
 # print(skaits)
 
 
@@ -122,7 +132,7 @@ pilsetas["Riga"] = 606000
 # print(grupas)
 
 
-# 6.4 Ligzdota vārdnīca
+# 6.4 Vārdnīca vārdnīcā
 # studenti = {
 #     "Anna": {"mat": 8, "eng": 9},
 #     "Juris": {"mat": 6, "eng": 7},
@@ -153,11 +163,31 @@ pilsetas["Riga"] = 606000
 # - tikai atslēgas,
 # - tikai vērtības.
 
+# sports = {
+#     "futbols": 11,
+#     "hokejs": 5,
+#     "volejbols": 6,
+#     "florbols": 5
+# }
+
+# print(sports)
+# print(list(sports.keys()))
+# print(list(sports.values()))
 
 # 2. uzdevums - pievienošana un labošana
 # Dotajai vārdnīcai pievieno vienu jaunu pāri un vienai esošai atslēgai
 # nomaini vērtību. Pēc tam izdzēs vienu ierakstu.
 
+# sports = {
+#     "futbols": 11,
+#     "hokejs": 5,
+#     "volejbols": 6,
+#     "florbols": 5
+# }
+
+# sports["teniss"] = 1
+# sports["florbols"] = 6
+# print(sports)
 
 # 3. uzdevums - droša meklēšana
 # Lietotājs ievada pilsētas nosaukumu.
@@ -165,12 +195,36 @@ pilsetas["Riga"] = 606000
 # Ja nav, izvadi "Nav datu".
 # (Ieteikums: get())
 
+# meklejama_pilseta = input("ievadi pilsētu, lai iegūtu iedzīvotāju skaitu: ")
+
+# 1. variants
+# print(pilsetas.get(meklejama_pilseta, "Nav datu"))
+
+# 2. variants
+# if meklejama_pilseta in pilsetas:
+#     print(pilsetas[meklejama_pilseta])
+# else:
+#     print("Nav datu")
+
 
 # 4. uzdevums - summa un vidējā vērtība
 # Dota vārdnīca, kuras atslēga ir prece, bet vērtība ir daudzums.
 # Aprēķini:
 # - kopējo daudzumu;
 # - vidējo daudzumu uz vienu preci.
+
+preces = {
+    "maize": 4,
+    "piens": 5,
+    "siers": 2
+}
+
+summa = 0
+for prece, skaits in preces.items():
+    summa += skaits
+
+print(len(preces), summa, summa/len(preces))
+
 
 
 # 5. uzdevums - maksimālā vērtība
