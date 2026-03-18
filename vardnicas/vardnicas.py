@@ -99,18 +99,16 @@ pilsetas = {
 # Notīrīt vārdnīcu
 # pilsetas.clear()
 
-
 # ============================================================
 # 6. PRAKTISKI PARAUGI
 # ============================================================
 
 # 6.1 Simbolu skaitīšana virknē
-# teksts = "programmesana"
+# teksts = "kirdikdigs"
 # skaits = {}
 # for ch in teksts:
 #     skaits[ch] = skaits.get(ch, 0) + 1
-#     print(ch, skaits)
-# print(skaits)
+# print(skaits) # {'k': 2, 'i': 3, 'r': 1, 'd': 2, 'g': 1, 's': 1}
 
 
 # 6.2 Vārdu biežums tekstā
@@ -120,7 +118,6 @@ pilsetas = {
 #     freq[vards] = freq.get(vards, 0) + 1
 # print(freq)
 
-
 # 6.3 Grupēšana pēc pirmā burta
 # vardi = ["Anna", "Andris", "Baiba", "Bruno", "Cecilia"]
 # grupas = {}
@@ -129,6 +126,7 @@ pilsetas = {
 #     if burts not in grupas:
 #         grupas[burts] = []
 #     grupas[burts].append(vards)
+#     print(grupas)
 # print(grupas)
 
 
@@ -213,17 +211,17 @@ pilsetas = {
 # - kopējo daudzumu;
 # - vidējo daudzumu uz vienu preci.
 
-preces = {
-    "maize": 4,
-    "piens": 5,
-    "siers": 2
-}
+# preces = {
+#     "maize": 4,
+#     "piens": 5,
+#     "siers": 2
+# }
 
-summa = 0
-for prece, skaits in preces.items():
-    summa += skaits
+# summa = 0
+# for prece, skaits in preces.items():
+#     summa += skaits
 
-print(len(preces), summa, summa/len(preces))
+# print(len(preces), summa, summa/len(preces))
 
 
 
@@ -231,10 +229,40 @@ print(len(preces), summa, summa/len(preces))
 # Atrodi to atslēgu, kurai ir lielākā vērtība vārdnīcā.
 # Ja ir vairākas vienādas maksimālās vērtības, pietiek ar pirmo atrasto.
 
+# vardnica = {
+#     'a': 5,
+#     'b': 6,
+#     'c': 3,
+# }
+
+# max = 0
+# max_key = ''
+# for key, value in vardnica.items():
+#     if value > max:
+#         max = value
+#         max_key = key
+
+# print(max_key)
 
 # 6. uzdevums - filtrēta vārdnīca
 # Izveido jaunu vārdnīcu, kurā paliek tikai tie pāri,
 # kuru vērtība ir >= 10.
+
+
+vardnica = {
+    'a': 5,
+    'b': 11,
+    'c': 13,
+}
+
+vardnica_filtered = {}
+
+for key, value in vardnica.items():
+    if value > 10:
+        vardnica_filtered[key] = value
+
+print(vardnica_filtered)
+
 
 
 # 7. uzdevums - burtu biežums
@@ -268,7 +296,7 @@ print(len(preces), summa, summa/len(preces))
 
 
 # 12. uzdevums - skolēnu atzīmes
-# Izveido ligzdotu vārdnīcu:
+# Izveido vārdnīcu vārdnīcā:
 # students -> {"mat": ..., "eng": ..., "prog": ...}
 # Izvadi katra skolēna vidējo atzīmi.
 
