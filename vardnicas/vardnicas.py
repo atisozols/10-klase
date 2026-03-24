@@ -1,3 +1,4 @@
+# https://cscircles.cemc.uwaterloo.ca/visualize
 # ============================================================
 # 1. KAS IR VĀRDNĪCA (MAP/HASHMAP/DICTIONARY)
 # ============================================================
@@ -249,19 +250,19 @@ pilsetas = {
 # kuru vērtība ir >= 10.
 
 
-vardnica = {
-    'a': 5,
-    'b': 11,
-    'c': 13,
-}
+# vardnica = {
+#     'a': 5,
+#     'b': 11,
+#     'c': 13,
+# }
 
-vardnica_filtered = {}
+# vardnica_filtered = {}
 
-for key, value in vardnica.items():
-    if value > 10:
-        vardnica_filtered[key] = value
+# for key, value in vardnica.items():
+#     if value > 10:
+#         vardnica_filtered[key] = value
 
-print(vardnica_filtered)
+# print(vardnica_filtered)
 
 
 
@@ -270,23 +271,60 @@ print(vardnica_filtered)
 # Saskaiti, cik reizes katrs burts parādās (ignorē atstarpes,
 # lielos/mazos burtus uzskati vienādi).
 
+# text = input("ievadi tekstu: ")
+# countsOfCharacters = {}
+# for char in text:
+#     countsOfCharacters[char] = countsOfCharacters.get(char, 0) + 1
+# print(countsOfCharacters)
 
 # 8. uzdevums - vārdu biežums
 # Lietotājs ievada teikumu.
 # Izveido vārdnīcu, kas glabā vārdu parādīšanās skaitu.
 # Izvadi vārdus un to biežumu.
 
+# text = input("ievadi tekstu: ")
+# listOfWords = text.split()
+# print(listOfWords)
+# freq = {}
+# for word in listOfWords:
+#     freq[word] = freq.get(word, 0) + 1
+# print(freq)
 
 # 9. uzdevums - top 3 vārdi
 # Pamatojoties uz iepriekšējo uzdevumu, atrodi 3 biežākos vārdus.
 # Ja vārdu ir mazāk par 3, izvadi tik, cik ir.
 
+# text = "suns suns suns kakis kakis zakis ezelis"
+# listOfWords = text.split()
+# print(listOfWords)
+# freq = {}
+# for word in listOfWords:
+#     freq[word] = freq.get(word, 0) + 1
+
+# import operator
+# freq_sorted = sorted(freq.items(), key=operator.itemgetter(1), reverse=True)
+# print(freq_sorted[:3])
 
 # 10. uzdevums - invertēt vārdnīcu
 # Dota vārdnīca ar unikālām vērtībām.
 # Izveido apgrieztu vārdnīcu:
 # vecās vērtības kļūst par atslēgām, vecās atslēgas par vērtībām.
 
+# example = {
+#     "a": 5,
+#     "c": 3,
+#     "d": 6,
+#     "x": 3,
+# }
+
+# example_inverted = {}
+
+# for key, value in example.items():
+#     if value not in example_inverted:
+#         example_inverted[value] = []
+#     example_inverted[value].append(key)
+
+# print(example_inverted)
 
 # 11. uzdevums - apvienot divas vārdnīcas
 # Dotas vārdnīcas d1 un d2 ar skaitliskām vērtībām.
@@ -294,11 +332,64 @@ print(vardnica_filtered)
 # - ja atslēga ir tikai vienā vārdnīcā, paņem tās vērtību;
 # - ja atslēga ir abās, vērtības saskaiti.
 
+# d1 = {
+#     "banani": 2,
+#     "aboli": 1,
+#     "burkani": 4,
+# }
+
+# d2 = {
+#     "banani": 3,
+#     "aboli": 4,
+#     "kivi": 1,
+# }
+
+# d3 = {}
+
+# for key, value in d1.items():
+#     d3[key] = value
+#     print(d3)
+
+# for key, value in d2.items():
+#     d3[key] = d3.get(key, 0) + d2[key]
+#     print(d3)
+
+# print(d3)
 
 # 12. uzdevums - skolēnu atzīmes
 # Izveido vārdnīcu vārdnīcā:
 # students -> {"mat": ..., "eng": ..., "prog": ...}
 # Izvadi katra skolēna vidējo atzīmi.
+
+school = {
+    'atis': {
+        'math': 9,
+        'eng': 8
+    },
+    'andrejs': {
+        'math': 8,
+        'eng': 4,
+        'rus': 9
+    }, 
+    'kristers': {
+        'math': 8,
+        'eng': 10
+    }
+}
+
+for student, grades in school.items():
+    gradesList = []
+    for subject, grade in grades.items():
+        gradesList.append(grade)
+    print(f"the average score for {student} is {sum(gradesList)/len(gradesList)}")
+
+
+# for _ in range(3):
+#     name = input("ievadi skolēna vārdu: ")
+#     math_grade = int(input("ievadi skolēna matemātikas atzīmi: "))
+#     eng_grade = int(input("ievadi skolēna angļu valodas atzīmi: "))
+#     grades = {"math": math_grade, "eng": eng_grade}
+#     school[name] = grades
 
 
 # 13. uzdevums - labākais students
