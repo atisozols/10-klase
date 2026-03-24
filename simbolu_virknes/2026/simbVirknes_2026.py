@@ -1,8 +1,26 @@
-# vards_uzvards = input("vārds, uzvārds: ").strip()
+# 5. uzd
 
-# saraksts = vards_uzvards.split()
+# text = "sansusi"
+# target = "s"
+# count = 0
 
-# print(f"{saraksts[1]}, {saraksts[0]}")
+# for char in text:
+#     if target == char:
+#         count += 1
+
+# print(count)
+
+# 6. uzdevums
+
+# full_name = input("ievadi vārdu un uzvārdu: ") #    Atis    Ozols
+# words = full_name.split() # ['Atis', 'Ozols']
+# first_name = words[0]
+# last_name = words[1]
+
+# print(f"{last_name}, {first_name}")
+# print(last_name, ",", first_name)
+
+# 7. uzdevums
 
 # answer = input("Do you agree? (yes/no): ")
 
@@ -13,14 +31,42 @@
 # else:
 #     print("Rejected")
 
+# 8. uzdevums
+
+# word = "bad"
 # text = input("Write a comment: ")
-
-# words_to_replace = ["bad", "good"]
-
-# for word in words_to_replace:
-#     text = text.replace(word, "***")
-
+# text = text.replace(word, "***")
 # print(text)
+
+# 9. uzdevums
+
+# text = input("ievadi teikumu: ")
+# words = text.split()
+# print(len(words))
+# print(words[0])
+# max_garums = 0
+# max_vards = ""
+# for word in words:
+#     if len(word) > max_garums:
+#         max_garums = len(word)
+#         max_vards = word
+#     print(word, max_vards)
+
+# haystack = "tukuma raina valsts gimnazijas valsts skoleni"
+# needle = "valsts"
+
+# if haystack.find(needle) == -1:
+#     print("nav tekstā")
+# elif haystack.find(needle) == haystack.rfind(needle):
+#     print(haystack.find(needle))
+#     print(haystack.rfind(needle))
+# else:
+#     print(haystack.find(needle))
+#     print(haystack.rfind(needle))
+#     f = haystack.find(needle) + len(needle)
+#     l = haystack.rfind(needle)
+#     print(haystack[f:l]) # text[sakums:beigas-neieskaitot]
+
 
 # teikums = input("Ievadiet teikumu: ")
 
@@ -29,6 +75,12 @@
 # print(len(teikums_saraksts)) 
 # print(teikums_saraksts[0])
 
+# text = "tukuma raina valsts gimnazija"
+# words = text.split()
+# result = ""
+# for word in words:
+#     result += word[0].upper()
+# print(result)
 
 # garakaisVards = ""
 # for vards in teikums_saraksts:
@@ -98,11 +150,6 @@
 # YES un f
 # Ja neviens neder, drukā NO.
 
-
-
-from itertools import count
-
-
 s = "ababab"
 # reizinajums = ""
 # print(s)
@@ -160,18 +207,18 @@ s = "ababab"
 
 # 2. no FV
 
-s = "aaabbcaaa" # -> a3b2c1a3
-result = ""
-current = ""
-current_count = 0
-for char in s:
-    if char == current:
-        current_count += 1
-    else:
-        if current_count > 0:
-            result += current + str(current_count)
-        current = char
-        current_count = 1
+# s = "aaabbcaaa" # -> a3b2c1a3
+# result = ""
+# current = ""
+# current_count = 0
+# for char in s:
+#     if char == current:
+#         current_count += 1
+#     else:
+#         if current_count > 0:
+#             result += current + str(current_count)
+#         current = char
+#         current_count = 1
 
-result += current + str(current_count)
-print(result)
+# result += current + str(current_count)
+# print(result)

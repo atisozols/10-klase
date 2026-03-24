@@ -161,7 +161,7 @@ Prasi lietotājam ievadīt frāzi (var būt liekas atstarpes, piemēram: " Centr
 Uzdevumi:
 
 - Attīri ievadi (strip).
-- Sadalī frāzi vārdos.
+- Sadali frāzi vārdos.
 - Izveido akronīmu no katra vārda pirmā burta.
 - Izdrukā akronīmu ar lielajiem burtiem.
 
