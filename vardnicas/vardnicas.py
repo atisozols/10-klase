@@ -336,3 +336,64 @@ print(vardnica_filtered)
 # Dots saraksts ar skaitliem.
 # Atrodi garāko apakšsarakstu, kurā visi elementi ir dažādi.
 # Norāde: lieto vārdnīcu, lai glabātu pēdējo pozīciju katram elementam.
+
+
+# 19. uzdevums - grupēšana pēc vārda garuma
+# Dots sarakstu ar vārdiem.
+# Izveido vārdnīcu, kur atslēga ir vārda garums,
+# bet vērtība ir saraksts ar visiem tāda garuma vārdiem.
+# Piemērs: ["es", "tu", "māja", " mākoņi", "ola"]
+# -> {2: ["es", "tu"], 4: ["māja"], 6: [" mākoņi"], 3: ["ola"]}
+
+
+# 20. uzdevums - iepirkumu grozs
+# Izveido programmu, kas cikliski lasa preces nosaukumu un cenu.
+# Ievade beidzas, kad lietotājs ievada "stop".
+# Ja prece jau ir grozā, pieskaiti jauno cenu pie esošās.
+# Beigās izvadi visas preces, to kopējo cenu un grozam kopējo summu.
+
+
+# 21. uzdevums - Cēzara šifrs ar vārdnīcu
+# Izveido šifrēšanas vārdnīcu, kas katru mazo latīņu burtu
+# nobīda par N pozīcijām (N ievada lietotājs).
+# Piemērs ar N=3: {'a': 'd', 'b': 'e', ...}
+# Šifrē un atšifrē lietotāja ievadītu tekstu.
+
+
+# 22. uzdevums - histogramma ar tekstu
+# Dota vārdnīca ar skaitliskām vērtībām.
+# Izvadi horizontālu histogrammu, kur katrai atslēgai
+# atbilst vērtībai proporcionāls zvaigžņu skaits.
+# Piemērs:
+# mājas  | *****
+# dzīvokļi | ***
+# biroji | ********
+
+
+# 23. uzdevums - retāko elementu atrašana
+# Dots saraksts ar elementiem (piem., vārdiem vai skaitļiem).
+# Ar vārdnīcas palīdzību atrodi visus elementus,
+# kas parādās tieši vienu reizi (unikālie elementi).
+# Izvadi tos sākotnējā secībā.
+
+
+# 24. uzdevums - divu sarakstu salīdzināšana
+# Doti divi saraksti ar vārdiem.
+# Ar vārdnīcu palīdzību atrodi:
+# - vārdus, kas ir tikai pirmajā sarakstā;
+# - vārdus, kas ir tikai otrajā sarakstā;
+# - vārdus, kas ir abos sarakstos.
+# Nelietot set(), tikai vārdnīcas.
+
+
+# 25. uzdevums - Morzes kods
+# Izveido vārdnīcu, kas katram burtam piešķir Morzes kodu.
+# Lietotājs ievada tekstu, programma izvada to Morzes kodā.
+# Papildus: izveido arī atpakaļšifrēšanu no Morzes uz tekstu.
+
+
+# 26. uzdevums - biežāko burtu pāru atrašana (bigrammas)
+# Dots teksts.
+# Saskaiti visus blakusesošo burtu pārus (ignorē atstarpes un reģistru).
+# Piemērs: "abcab" -> {"ab": 2, "bc": 1, "ca": 1}
+# Atrodi 3 biežākos pārus.
