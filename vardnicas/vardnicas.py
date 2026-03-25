@@ -488,3 +488,30 @@ for student, grades in school.items():
 # Saskaiti visus blakusesošo burtu pārus (ignorē atstarpes un reģistru).
 # Piemērs: "abcab" -> {"ab": 2, "bc": 1, "ca": 1}
 # Atrodi 3 biežākos pārus.
+
+
+# FV1. uzdevums - augļu biežums
+# Dots saraksts ar augļiem.
+# Izveido vārdnīcu, kur:
+# - atslēga ir augļa nosaukums,
+# - vērtība ir tas, cik reizes šis auglis parādās sarakstā.
+# Pēc tam:
+# - izvadi visu vārdnīcu,
+# - atrodi un izvadi augli, kas parādās visbiežāk.
+
+# augli = [
+#     "abols", "banans", "abols", "bumbieris",
+#     "banans", "abols", "kivi"
+# ]
+
+
+# FV2. uzdevums - veikala noliktava
+# Izveido vārdnīcu "noliktava", kur:
+# - atslēga ir preces nosaukums,
+# - vērtība ir atlikušais daudzums noliktavā.
+# Vārdnīcā jābūt vismaz 5 precēm.
+# Pēc tam:
+# - lietotājs ievada preces nosaukumu,
+# - ja prece ir vārdnīcā, izvadi tās daudzumu,
+# - ja preces nav, izvadi "Prece nav atrasta".
+# Beigās izvadi visas preces, kuru skaits ir lielāks par 3.
