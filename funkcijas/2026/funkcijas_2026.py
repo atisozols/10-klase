@@ -25,13 +25,12 @@
 # 1. PAMATI
 # ============================================================
 
-def sasveicinies():
-    print("Sveiki!")
-
+def sasveicinies(vards = "Nezināmais"):
+    print(f"Sveiks, {vards}")
 
 def pilns_vards(vards, uzvards):
     return f"{uzvards}, {vards}"
-
+    
 
 def kvadrats(n):
     return n * n
@@ -41,23 +40,24 @@ def ir_para(sk):
     return sk % 2 == 0
 
 
+
 # Piemēri:
 # sasveicinies()
 # print(pilns_vards("Anna", "Kalnina"))   # Kalnina, Anna
 # print(kvadrats(6))                      # 36
-# print(ir_para(15))                      # False
+# print(ir_para(16))                      # False
 
 
 # ============================================================
 # 2. PRINT UN RETURN NAV VIENS UN TAS PATS
 # ============================================================
 
-def izvada_summu(a, b):
-    print(a + b)
+# def izvada_summu(a, b):
+#     print(a + b)
 
 
-def atgriez_summu(a, b):
-    return a + b
+# def atgriez_summu(a, b):
+#     return a + b
 
 
 # izvada_summu(4, 5)         # uz ekrāna parādīsies 9
@@ -119,10 +119,12 @@ def simbolu_biezums(text):
 # ============================================================
 
 def elementi_virs_videja(s):
-    # Atgriez jaunu sarakstu ar tiem elementiem,
-    # kas ir stingri lielāki par saraksta vidējo vērtību.
-    # Piemērs: [1, 2, 3, 10] -> [10]
-    pass
+    result = []
+    avg = sum(s)/len(s)
+    for elem in s:
+        if elem > avg:
+            result.append(elem)
+    return result
 
 
 def bez_duplikatiem(s):
