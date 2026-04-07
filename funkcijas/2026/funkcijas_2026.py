@@ -127,33 +127,60 @@ def elementi_virs_videja(s):
     return result
 
 
-def bez_duplikatiem(s):
-    # Atgriez jaunu sarakstu, kur katra vērtība parādās tikai vienu reizi,
-    # saglabājot pirmās parādīšanās secību.
-    # Piemērs: [3, 1, 3, 2, 1] -> [3, 1, 2]
-    pass
+def bez_dublikatiem(s):
+    result = []
+    for elem in s:
+        if elem not in result:
+            result.append(elem)
+    return result
 
 
 def saraksts_par_skaitli(cipari):
     # Dots saraksts, kur katrs elements ir cipars no 0 līdz 9.
     # Izveido un atgriez vienu veselu skaitli.
     # Piemērs: [6, 1, 2, 3] -> 6123
-    pass
+    skaitlis = 0
+    for cipars in cipari:
+        skaitlis = skaitlis * 10 + cipars
+    return skaitlis
 
 
 def garaka_vienadu_serija(s):
-    # Atgriez garākās vienādu blakus elementu sērijas garumu un vērtību.
-    # Ja ir vairākas vienāda garuma sērijas, atgriez pirmo.
-    # Piemērs: [4, 4, 4, 2, 2, 9] -> (3, 4)
-    pass
+    max_skaits = 0
+    max_vertiba = 0
+    skaits = 0
+    vertiba = 0
+    for elem in s:
+        if elem == vertiba:
+            skaits += 1
+            if skaits > max_skaits:
+                max_skaits = skaits
+                max_vertiba = vertiba
+        else:
+            skaits = 1
+            vertiba = elem
+    
+    return (max_skaits, max_vertiba)
 
 
 def garakais_augsosais_apaksaraksts(s):
-    # Atgriez garumu un pašu garāko stingri augošo apakšsarakstu.
-    # Ja ir vairāki vienāda garuma, atgriez pirmo.
-    # Piemērs: [1, 2, 5, 3, 4, 8] -> (3, [1, 2, 5])
-    pass
+    garaka_apaksvirkne = []
+    apaksvirkne = []
+    for elem in s:
+        if len(apaksvirkne) > 0:
+            if elem > apaksvirkne[-1]:
+                apaksvirkne.append(elem)
+            else:
+                if len(apaksvirkne) > len(garaka_apaksvirkne):
+                    garaka_apaksvirkne = apaksvirkne.copy()
+                apaksvirkne = [elem]
+        else:
+            apaksvirkne.append(elem)
 
+        if len(apaksvirkne) > len(garaka_apaksvirkne):
+            garaka_apaksvirkne = apaksvirkne.copy()
+
+    return (len(garaka_apaksvirkne), garaka_apaksvirkne)
 
 # ============================================================
 # 6. UZDEVUMI PAR FUNKCIJĀM — SIMBOLU VIRKNES
@@ -161,33 +188,43 @@ def garakais_augsosais_apaksaraksts(s):
 # ============================================================
 
 def masket_ciparus(text):
-    # Aizstāj katru ciparu ar simbolu #.
-    # Atgriez jauno tekstu un aizstāto ciparu skaitu.
-    # Piemērs: "abc12x" -> ("abc##x", 2)
-    pass
+    result = text
+    cipari = "0123456789"
+    for cipars in cipari:
+        result = result.replace(cipars, "#")
+    return result
 
 
 def apgriezt_vardu_secibu(text):
-    # Noņem liekās atstarpes sākumā un beigās.
-    # Atgriez tekstu ar apgrieztu vārdu secību.
-    # Piemērs: " šodien ir labi " -> "labi ir šodien"
-    pass
+    words = text.strip()
+    words = words.split()
+    words.reverse()
+    return " ".join(words)
 
 
 def popularakais_simbols(text):
-    # Atrodi visbiežāk sastopamo simbolu, neskaitot atstarpes.
-    # Ja ir vairāki vienādi, atgriez pirmo no tiem.
-    # Atgriez simbolu un tā skaitu.
-    # Piemērs: "abracadabra" -> ("a", 5)
-    pass
+    vardnica = {}
+    for char in text:
+        vardnica[char] = vardnica.get(char, 0) + 1
+
+    biezhakais = ""
+    skaits = 0
+    for key, value in vardnica.items():
+        if value > skaits:
+            biezhakais = key
+            skaits = value
+    return (biezhakais, skaits)
 
 
 def garakais_tirais_vards(text):
-    # Atgriez garāko vārdu, kas satur tikai burtus.
-    # Ja ir vairāki vienāda garuma, atgriez pirmo.
-    # Ja tāda nav, atgriez "Nav".
-    # Piemērs: "abc 12xy hello3 world" -> "world"
-    pass
+    words = text.split()
+    longest = ""
+
+    for word in words:
+        if word.isalpha() and len(word) > len(longest):
+            longest = word
+    
+    return longest
 
 
 def saspiest_vardus(text):
