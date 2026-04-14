@@ -228,15 +228,22 @@ def garakais_tirais_vards(text):
 
 
 def saspiest_vardus(text):
-    # Saspied secīgi atkārtojošos vārdus:
-    # "labi labi slikti" -> "labi2 slikti1"
-    #
-    # Atgriez:
-    # 1) saspiesto tekstu,
-    # 2) grupu skaitu,
-    # 3) vārdu ar lielāko grupu,
-    # 4) šīs grupas lielumu.
-    pass
+    result = ""
+    current = ""
+    current_count = 0
+
+    for word in text.split():
+        if word == current:
+            current_count += 1
+        else:
+            if current_count > 0:
+                result += current + str(current_count)
+            current = word
+            current_count = 1
+
+    result += current + str(current_count)
+
+    return result
 
 
 # ============================================================
@@ -245,27 +252,27 @@ def saspiest_vardus(text):
 # ============================================================
 
 def kabineta_numurs(kabineti, prieksmets):
-    # Dota vārdnīca ar formu:
-    # {"Matematika": 214, "Biologija": 306}
-    #
-    # Atgriez kabineta numuru, ja priekšmets ir vārdnīcā.
-    # Ja nav, atgriez "Nav datu".
-    pass
+    if prieksmets in kabineti:
+        return kabineti[prieksmets]
+    else:
+        return "Nav datu"
 
+# vardnica = {"Matemātika": 24, "Programmēšana": 60}
+# atslega = "Matemātika"
+
+# print(kabineta_numurs(vardnica, atslega))
 
 def vardu_pirmo_burtu_biezums(text):
-    # Sadalī tekstu vārdos.
-    # Izveido vārdnīcu, kas glabā katra vārda pirmā burta skaitu.
-    # Lielos un mazos burtus uzskati vienādi.
-    #
-    # Atgriez:
-    # 1) biežumu vārdnīcu,
-    # 2) visbiežāko pirmo burtu,
-    # 3) tā skaitu.
-    #
-    # Piemērs:
-    # "Anna lasa avenes ar Bruno" -> ({"a": 3, "l": 1, "b": 1}, "a", 3)
-    pass
+    result = {}
+    for word in text.split():
+        pirmais_burts = word[0].lower()
+        result[pirmais_burts] = result.get(pirmais_burts, 0) + 1
+
+    return result
+
+
+# v = vardu_pirmo_burtu_biezums("programmesana ir mans milakais prieksmets")
+# print(vardu_pirmo_burtu_biezums("vidusskola ir labakais laiks"))
 
 
 def aukstas_pilsetas(temperaturas):
@@ -293,20 +300,23 @@ def rezultatu_izmainas(pirmais, otrais):
 
 
 def balsojuma_rezultats(balsis):
-    # Dots kandidātu saraksts, piemēram:
-    # ["Anna", "Juris", "Anna", "Liva", "Anna"]
-    #
-    # Izveido vārdnīcu ar balsu skaitu katram kandidātam.
-    #
-    # Atgriez:
-    # 1) balsu vārdnīcu,
-    # 2) kopējo balsu skaitu,
-    # 3) uzvarētāja vārdu,
-    # 4) uzvarētāja balsu skaitu.
-    #
-    # Ja saraksts ir tukšs, vari atgriezt ({}, 0, None, 0)
-    pass
+    record = 0
+    record_holder = ""
+    result = {}
 
+    for balss in balsis:
+        result[balss] = result.get(balss, 0) + 1
+        if result[balss] > record:
+            record = result[balss]
+            record_holder = balss
+
+    return {record_holder: record}
+
+# Test examples for balsojuma_rezultats
+# print(balsojuma_rezultats(["Anna", "Juris", "Anna", "Anna", "Juris"]))  # {'Anna': 3}
+# print(balsojuma_rezultats(["A", "B", "C", "A", "B", "A"]))  # {'A': 3}
+# print(balsojuma_rezultats(["Atis", "Atis", "Kristers", "Kristers", "Atis"]))  # {'Atis': 3}
+# print(balsojuma_rezultats(["viens", "divi", "viens", "divi", "viens", "viens"]))  # {'viens': 4}
 
 # ============================================================
 # 8. PAPILDU IDEJA
@@ -318,3 +328,81 @@ def balsojuma_rezultats(balsis):
 # - viena funkcija noformē rezultātu.
 #
 # Tas ir labs solis no "viena gara skripta" uz sakārtotu programmu.
+
+# Piemērs 1: paroles stipruma pārbaudītājs
+# (adaptēts no simbolu_virknes/12. uzdevums)
+# Oriģināli bija viens garš skripts — tagad sadalīts 3 funkcijās.
+
+def analizet_paroli(parole):
+    # saskaita atstarpes, lielos burtus un ciparus
+    atstarpes = 0
+    lielie = 0
+    cipari = 0
+    for simbols in parole:
+        if simbols == " ":
+            atstarpes += 1
+        if simbols.isupper():
+            lielie += 1
+        if simbols.isdigit():
+            cipari += 1
+    return {"atstarpes": atstarpes, "lielie": lielie, "cipari": cipari}
+
+
+def ir_stipra(parole):
+    # atgriež True, ja parole atbilst visiem kritērijiem
+    analīze = analizet_paroli(parole)
+    return (len(parole) > 7
+            and analīze["atstarpes"] == 0
+            and analīze["lielie"] > 0
+            and analīze["cipari"] > 0)
+
+
+def formatet_paroles_rezultatu(stipra):
+    # atgriež cilvēkam lasāmu tekstu
+    if stipra:
+        return "Strong"
+    return "Weak"
+
+parole = input("Ievadi paroli: ")
+print(formatet_paroles_rezultatu(ir_stipra(parole)))
+
+# Piemērs 2: lietotājs ievada tekstu un programma atrod biežāko vārdu
+
+def attirit_tekstu(text):
+    # noņem pieturzīmes, pārveido mazajos burtos
+    pieturzimes = ".,!?;:'\"-()[]{}/"
+    rezultats = ""
+    for char in text.lower():
+        if char not in pieturzimes:
+            rezultats += char
+    return rezultats
+
+
+def saskaitit_vardus(text):
+    # atgriež vārdnīcu ar vārdu biežumu
+    tirais_teksts = attirit_tekstu(text)
+    vardnica = {}
+    for vards in tirais_teksts.split():
+        vardnica[vards] = vardnica.get(vards, 0) + 1
+    return vardnica
+
+
+def atrast_biezako(vardnica):
+    # atgriež biežāko vārdu un tā skaitu
+    biezakais = ""
+    skaits = 0
+    for vards, biežums in vardnica.items():
+        if biežums > skaits:
+            biezakais = vards
+            skaits = biežums
+    return (biezakais, skaits)
+
+
+def formatet_rezultatu(biezakais, skaits):
+    # atgriež cilvēkam lasāmu tekstu
+    return f"Biežākais vārds ir '{biezakais}' ar {skaits} atkārtojumiem."
+
+text = input("Ievadi tekstu: ")
+vardnica = saskaitit_vardus(text)
+biezakais, skaits = atrast_biezako(vardnica)
+print(formatet_rezultatu(biezakais, skaits))
