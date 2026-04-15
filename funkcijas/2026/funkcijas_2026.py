@@ -406,3 +406,37 @@ text = input("Ievadi tekstu: ")
 vardnica = saskaitit_vardus(text)
 biezakais, skaits = atrast_biezako(vardnica)
 print(formatet_rezultatu(biezakais, skaits))
+
+
+# ============================================================
+# 10. JAUNI UZDEVUMI STUDENTIEM
+# ============================================================
+
+def taisnstura_laukums(garums, platums):
+    # Saņem taisnstūra garumu un platumu.
+    # Atgriez taisnstūra laukumu.
+    #
+    # Piemēri:
+    # taisnstura_laukums(5, 3) -> 15
+    # taisnstura_laukums(8, 2) -> 16
+    pass
+
+
+def pirmais_un_pedejais_burts(vards):
+    # Saņem vienu vārdu.
+    # Atgriez tā pirmo un pēdējo burtu kā sarakstu.
+    #
+    # Piemēri:
+    # pirmais_un_pedejais_burts("skola") -> ["s", "a"]
+    # pirmais_un_pedejais_burts("logs") -> ["l", "s"]
+    pass
+
+
+def cik_skaitlu_virs_pieci(s):
+    # Saņem skaitļu sarakstu.
+    # Atgriez, cik elementi sarakstā ir lielāki par 5.
+    #
+    # Piemēri:
+    # cik_skaitlu_virs_pieci([1, 7, 3, 9, 5]) -> 2
+    # cik_skaitlu_virs_pieci([6, 6, 6]) -> 3
+    pass
