@@ -16,12 +16,12 @@
 # - klase apraksta objektu ar atribūtiem un metodēm.
 #
 # Vispārīgā forma:
-#
+
 # class Nosaukums:
 #     def __init__(self, parametrs1, parametrs2):
 #         self.atribuuts1 = parametrs1
 #         self.atribuuts2 = parametrs2
-#
+
 #     def metode(self):
 #         return self.atribuuts1
 #
@@ -37,17 +37,21 @@
 # ============================================================
 
 class Dziesma:
-    def __init__(self, nosaukums, izpilditajs, ilgums):
-        self.nosaukums = nosaukums
-        self.izpilditajs = izpilditajs
-        self.ilgums = ilgums
+    def __init__(self, n, i, ilg):
+        self.nosaukums = n
+        self.izpilditajs = i
+        self.ilgums = ilg
 
     def apraksts(self):
         return f"{self.izpilditajs} - {self.nosaukums} ({self.ilgums}s)"
 
 
 # Piemēri:
-# d = Dziesma("Saule", "Prāta Vētra", 215)
+# d = Dziesma("Starp divām saulēm", "Prāta Vētra", 415)
+# d = Dziesma()
+# d.nosaukums = "Starp divām saulēm"
+# d.izpilditajs = "Prāta vētra"
+# d.ilgums = 123
 # print(d.nosaukums)       # Saule
 # print(d.izpilditajs)     # Prāta Vētra
 # print(d.apraksts())      # Prāta Vētra - Saule (215s)
@@ -88,12 +92,14 @@ class Taisnsturis:
 
 
 # t = Taisnsturis(5, 3)
+# print(t.garums)
 # print(t.laukums())       # 15
 # print(t.perimetrs())     # 16
 # print(t.ir_kvadrats())   # False
-#
+
 # k = Taisnsturis(4, 4)
 # print(k.ir_kvadrats())   # True
+# print(k.laukums())
 
 
 # ============================================================
@@ -109,7 +115,7 @@ class Taisnsturis:
 #         self.vards = vards
 #         self.vecums = vecums
 #         self.atzime = atzime
-#
+
 # anna = Skolens("Anna", 16, 8)
 # print(anna.vards)
 #
@@ -124,9 +130,9 @@ class Taisnsturis:
 # ============================================================
 
 class Skolens:
-    def __init__(self, vards, klase):
-        self.vards = vards
-        self.klase = klase
+    def __init__(self, v, k):
+        self.vards = v
+        self.klase = k
         self.atzimes = []
 
     def pievienot_atzimi(self, atzime):
@@ -148,6 +154,16 @@ class Skolens:
 # print(a.videja())         # 8.0
 # print(a.apraksts())       # Anna (10. klase), vidējā: 8.0
 
+# j = Skolens("Jānis", 8)
+# print(j.vards)
+# j.pievienot_atzimi(7)
+# j.pievienot_atzimi(4)
+# j.pievienot_atzimi(5)
+# print(j.atzimes)
+# print(j.apraksts())
+
+
+
 
 class Konts:
     def __init__(self, ipasnieks, atlikums=0):
@@ -164,7 +180,7 @@ class Konts:
         return True
 
 
-# k = Konts("Anna", 100)
+# k = Konts("Anna")
 # k.iemaksat(50)
 # print(k.atlikums)        # 150
 # print(k.iznemt(200))     # False
@@ -217,29 +233,34 @@ class Punkts:
 # ============================================================
 
 class Gramata:
-    # Atribūti: virsraksts, autors, lapas.
-    # Metode apraksts() atgriež tekstu:
-    # "{virsraksts} - {autors} ({lapas} lpp.)"
-    #
-    # Piemēri:
-    # g = Gramata("Baltā grāmata", "Rainis", 240)
-    # g.apraksts()  -> "Baltā grāmata - Rainis (240 lpp.)"
-    pass
+    def __init__(self, virsraksts, autors, lapas):
+        self.virsraksts = virsraksts
+        self.autors = autors
+        self.lapas = lapas
+
+    def apraksts(self):
+        return f"{self.virsraksts} - {self.autors} ({self.lapas} lpp.)"
+    
+g = Gramata("Baltā grāmata", "Rainis", 240)
+print(g.apraksts())  # "Baltā grāmata - Rainis (240 lpp.)"
 
 
 class Sunuks:
-    # Atribūti: vards, vecums.
-    # Metode ir_jauns() — atgriež True, ja vecums < 2.
-    # Metode dzimsanas_diena() — palielina vecumu par 1.
-    #
-    # Piemēri:
-    # s = Sunuks("Reksis", 1)
-    # s.ir_jauns()          -> True
-    # s.dzimsanas_diena()
-    # s.vecums              -> 2
-    # s.ir_jauns()          -> False
-    pass
+    def __init__(self, vards, vecums):
+        self.vards = vards
+        self.vecums = vecums
 
+    def ir_jauns(self):
+        return self.vecums < 2
+
+    def dzimsanas_diena(self):
+        self.vecums += 1
+        return self.vecums
+    
+s = Sunuks("Kaupo", 1)
+s.dzimsanas_diena()
+print(s.vecums)
+print(s.ir_jauns())
 
 class Aplis:
     # Atribūts: radiuss.
