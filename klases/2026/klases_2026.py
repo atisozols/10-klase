@@ -257,37 +257,62 @@ class Sunuks:
         self.vecums += 1
         return self.vecums
     
-s = Sunuks("Kaupo", 1)
-s.dzimsanas_diena()
-print(s.vecums)
-print(s.ir_jauns())
+# s = Sunuks("Kaupo", 1)
+# s.dzimsanas_diena()
+# print(s.vecums)
+# print(s.ir_jauns())
 
 class Aplis:
-    # Atribūts: radiuss.
-    # Metode laukums() — atgriež apļa laukumu (pi * r * r).
-    # Metode apkartmers() — atgriež apkārtmēru (2 * pi * r).
-    # Izmanto pi = 3.14159.
-    pass
+    def __init__(self, r):
+        self.radiuss = r
+
+    def laukums(self):
+        return self.radiuss * self.radiuss * 3.14159
+
+    def apkartmers(self):
+        return 2 * 3.14159 * self.radiuss
+
+# a1 = Aplis(5)
+# print(a1.radiuss)
+# print(a1.laukums())
+# print(a1.apkartmers())
+
 
 # ============================================================
 # 9. UZDEVUMI — PIEMĒROJUMI
 # ============================================================
 
 class IepirkumuGrozs:
+    def __init__(self):
+        self.preces = {}
+
+    def pievienot(self, nosaukums, cena):
+        self.preces[nosaukums] = cena
+
+    def kopsumma(self):
+        summa = 0
+        for key, value in self.preces.items():
+            summa += value
+        
+        return summa
     # Atribūts: preces (vārdnīca {nosaukums: cena}).
     # pievienot(nosaukums, cena) — pievieno preci.
     # iznemt(nosaukums) — noņem preci, ja tāda ir.
     # kopsumma() — atgriež visu cenu summu.
     # dargaka() — atgriež dārgākās preces nosaukumu.
-    #
-    # Piemēri:
-    # g = IepirkumuGrozs()
-    # g.pievienot("maize", 1.50)
-    # g.pievienot("piens", 1.20)
-    # g.pievienot("siers", 4.80)
-    # g.kopsumma()     -> 7.5
-    # g.dargaka()      -> "siers"
-    pass
+
+g = IepirkumuGrozs()
+g.pievienot("maize", 1.50)
+g.pievienot("piens", 1.20)
+g.pievienot("siers", 4.80)
+print(g.kopsumma())
+
+# g = IepirkumuGrozs()
+# g.pievienot("maize", 1.50)
+# g.pievienot("piens", 1.20)
+# g.pievienot("siers", 4.80)
+# g.kopsumma()     -> 7.5
+# g.dargaka()      -> "siers"
 
 
 class Temperaturas:
@@ -354,4 +379,79 @@ class Klase:
     # videja_atzime() — atgriež visas klases vidējo atzīmi
     #   (visu skolēnu visu atzīmju vidējā).
     # labakais_skolens() — atgriež skolēnu ar augstāko vidējo atzīmi.
+    pass
+
+
+class Parole:
+    # Atribūts: teksts (parole kā virkne).
+    # garums() — atgriež paroles garumu.
+    # ir_stipra() — atgriež True, ja:
+    #   - garums ir vismaz 8,
+    #   - satur vismaz vienu ciparu,
+    #   - satur vismaz vienu lielo burtu.
+    # mainit(jauna) — nomaina paroli uz jauno.
+    #
+    # Piemēri:
+    # p = Parole("abc123")
+    # p.garums()        -> 6
+    # p.ir_stipra()     -> False
+    # p.mainit("Parole2026")
+    # p.ir_stipra()     -> True
+    pass
+
+
+class Atskanotajs:
+    # Atribūts: dziesmas (saraksts ar Dziesma objektiem).
+    # pievienot(dziesma) — pievieno dziesmu sarakstam.
+    # kopejais_ilgums() — atgriež visu dziesmu ilgumu summu sekundēs.
+    # garaka() — atgriež garāko dziesmu (Dziesma objektu).
+    # pec_izpilditaja(vards) — atgriež sarakstu ar dotā izpildītāja dziesmām.
+    #
+    # Piemēri:
+    # a = Atskanotajs()
+    # a.pievienot(Dziesma("Saule", "Prāta Vētra", 215))
+    # a.pievienot(Dziesma("Dzimtene", "Pērkons", 180))
+    # a.kopejais_ilgums()          -> 395
+    # a.garaka().nosaukums         -> "Saule"
+    # a.pec_izpilditaja("Pērkons") -> [Dziesma objekts]
+    pass
+
+
+class Autostavvieta:
+    # Atribūti: vietas (kopējais vietu skaits), masinas (saraksts ar numurzīmēm).
+    # iebraukt(numurs) — pievieno mašīnu, ja vēl ir brīva vieta.
+    #   Atgriež True, ja izdevās, False, ja stāvvieta pilna.
+    # izbraukt(numurs) — izņem mašīnu no saraksta, ja tāda ir.
+    # brivas_vietas() — atgriež, cik vietu vēl ir brīvas.
+    # ir_pilna() — atgriež True, ja nav brīvu vietu.
+    #
+    # Piemēri:
+    # s = Autostavvieta(2)
+    # s.iebraukt("AB-1234")   -> True
+    # s.iebraukt("CD-5678")   -> True
+    # s.iebraukt("EF-9999")   -> False
+    # s.brivas_vietas()       -> 0
+    # s.izbraukt("AB-1234")
+    # s.ir_pilna()            -> False
+    pass
+
+
+class Kalendars:
+    # Atribūts: notikumi (vārdnīca {datums: apraksts}).
+    #   Datums ir virkne formātā "YYYY-MM-DD".
+    # pievienot(datums, apraksts) — pievieno notikumu.
+    # dzest(datums) — izdzēš notikumu, ja tāds ir.
+    # notikums(datums) — atgriež apraksta tekstu vai None.
+    # pec_gada(gads) — atgriež sarakstu ar visu notikumu aprakstiem
+    #   no konkrētā gada (gads padots kā skaitlis).
+    #
+    # Piemēri:
+    # k = Kalendars()
+    # k.pievienot("2026-01-01", "Jaunais gads")
+    # k.pievienot("2026-06-23", "Līgo")
+    # k.pievienot("2025-12-24", "Ziemassvētki")
+    # k.notikums("2026-01-01")   -> "Jaunais gads"
+    # k.pec_gada(2026)           -> ["Jaunais gads", "Līgo"]
+    # k.dzest("2026-01-01")
+    # k.notikums("2026-01-01")   -> None
     pass
