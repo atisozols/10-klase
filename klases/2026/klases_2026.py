@@ -36,6 +36,9 @@
 # 1. PAMATI
 # ============================================================
 
+
+
+
 class Dziesma:
     def __init__(self, n, i, ilg):
         self.nosaukums = n
@@ -242,7 +245,7 @@ class Gramata:
         return f"{self.virsraksts} - {self.autors} ({self.lapas} lpp.)"
     
 g = Gramata("Baltā grāmata", "Rainis", 240)
-print(g.apraksts())  # "Baltā grāmata - Rainis (240 lpp.)"
+# print(g.apraksts())  # "Baltā grāmata - Rainis (240 lpp.)"
 
 
 class Sunuks:
@@ -305,7 +308,7 @@ g = IepirkumuGrozs()
 g.pievienot("maize", 1.50)
 g.pievienot("piens", 1.20)
 g.pievienot("siers", 4.80)
-print(g.kopsumma())
+# print(g.kopsumma())
 
 # g = IepirkumuGrozs()
 # g.pievienot("maize", 1.50)
@@ -314,6 +317,42 @@ print(g.kopsumma())
 # g.kopsumma()     -> 7.5
 # g.dargaka()      -> "siers"
 
+class Kvadratvienadojums:
+    def __init__(self, x, y, z):
+        self.a = x
+        self.b = y
+        self.c = z
+        
+    def __str__(self):
+        return f"{self.a}x2 + ({self.b}x) + ({self.c})"
+
+    def diskriminants(self):
+        return self.b ** 2 - 4 * self.a * self.c
+
+    def saknes(self):
+        if self.diskriminants() < 0:
+            return []
+        elif self.diskriminants() == 0:
+            x = -self.b / (2 * self.a)
+            return [x]
+        else:
+            x1 = (-self.b + self.diskriminants() ** 0.5) / (2 * self.a)
+            x2 = (-self.b - self.diskriminants() ** 0.5) / (2 * self.a)
+            return [x1, x2]
+
+    def x_virsotne(self):
+        return -self.b / (2 * self.a)
+
+    def y_virsotne(self):
+        x = self.x_virsotne()
+        return (self.a * x ** 2) + (self.b * x) + self.c
+
+a = Kvadratvienadojums(1, -4, 3)
+print(a)
+print(len(a.saknes()))
+print(a.saknes())
+print(a.x_virsotne())
+print(a.y_virsotne())
 
 class Temperaturas:
     # Atribūts: merijumi (saraksts ar skaitļiem).
@@ -455,3 +494,4 @@ class Kalendars:
     # k.dzest("2026-01-01")
     # k.notikums("2026-01-01")   -> None
     pass
+
