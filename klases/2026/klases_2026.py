@@ -495,3 +495,48 @@ class Kalendars:
     # k.notikums("2026-01-01")   -> None
     pass
 
+
+# ============================================================
+# 11. FORMATĪVAIS - 29.04.2026
+# ============================================================
+
+class Trijsturis:
+    # FORMATĪVAIS
+    # Atribūti: a, b, c (trijstūra malu garumi).
+    # __init__ saņem trīs malu garumus.
+    # perimetrs() — atgriež malu summu.
+    # ir_vienadmalu() — atgriež True, ja visas trīs malas ir vienādas.
+    # ir_taisnlenka() — atgriež True, ja trijstūris ir taisnleņķa
+    # laukums() — atgriež laukumu pēc Hērona formulas
+    #
+    # Piemēri:
+    # t = Trijsturis(3, 4, 5)
+    # t.perimetrs()        -> 12
+    # t.ir_vienadmalu()    -> False
+    # t.ir_taisnlenka()    -> True
+    # t.laukums()          -> 6.0
+    #
+    # t2 = Trijsturis(5, 5, 5)
+    # t2.ir_vienadmalu()   -> True
+    # t2.ir_taisnlenka()   -> False
+    pass
+
+
+class Cilindrs:
+    # Atribūti: radiuss, augstums.
+    # __init__ saņem rādiusu un augstumu.
+    # pamata_laukums() — atgriež apļa pamata laukumu (pi * r * r).
+    # tilpums() — atgriež cilindra tilpumu (pamata_laukums * augstums).
+    # virsmas_laukums() — atgriež pilno virsmas laukumu:
+    #   2 * pamata_laukums + 2 * pi * r * augstums.
+    # ir_augstaks_neka(cits) — atgriež True, ja šī cilindra
+    #   augstums ir lielāks par cits cilindra augstumu.
+    #
+    # Izmantot pi = 3.14159
+    #
+    # Piemēri:
+    # c = Cilindrs(2, 5)
+    # c.pamata_laukums()        -> 12.56636
+    # c.tilpums()               -> 62.8318
+    # c.virsmas_laukums()       -> 87.96452
+    pass
