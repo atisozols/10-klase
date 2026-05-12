@@ -19,11 +19,9 @@ Krāsains pikselis ar trim krāsu kanāliem (sarkans, zaļš, zils).
 p = Pikselis(120, 120, 120)
 p.spilgtums()        # -> 120.0
 p.ir_peleks()        # -> True
-p.ir_tums()          # -> False
 
 p2 = Pikselis(40, 30, 50)
 p2.ir_peleks()       # -> False
-p2.ir_tums()         # -> True
 ```
 
 ---
